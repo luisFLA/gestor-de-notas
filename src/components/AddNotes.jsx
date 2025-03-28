@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ModalNotes from "./ModalNotes"; // Asegúrate de que este import esté aquí y no declares ModalNotes dentro del archivo
+import ModalNotes from "./ModalNotes"; 
 import { useModalNotes } from "../hooks/useModalNotes";
 import useCrud from "../hooks/useCrud";
 
