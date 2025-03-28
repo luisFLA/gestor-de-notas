@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import useCrud from "../hooks/useCrud";
 import funcionesBtn from "../hooks/funcionesBtn";
 
-const FormNotes = ({ btn }) => {
+const FormNotes = ({ btn, onClose }) => {
   const { addNotesF } = useCrud();
   const { limpiarTxt } = funcionesBtn();
   const tituloRef = useRef(null);
@@ -39,11 +39,11 @@ const FormNotes = ({ btn }) => {
           rows="3"
         ></textarea>
       </div>
-      <div className="modalFooter">
-        <button type="button" className="btn btn-secondary">
-          Close
+      <div className="modalFooter d-flex justify-content-end gap-2">
+        <button type="button" className="btn btn-danger" onClick={onClose}>
+          Cerrar
         </button>
-        <button type="button" className="btn btn-primary" onClick={handleSubmit}>
+        <button type="submit" className="btn btn-primary">
           {btn}
         </button>
       </div>

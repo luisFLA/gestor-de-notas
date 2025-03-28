@@ -3,7 +3,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import FormNotes from "./FormNotes";
 
-export function ModalNotes({ children, isOpen, closeModal, title, btn }) {
+export function ModalNotes({ isOpen, closeModal, title, btn }) {
   const handleModalContainer = (e) => e.stopPropagation();
 
   return (
@@ -12,15 +12,15 @@ export function ModalNotes({ children, isOpen, closeModal, title, btn }) {
         <button className="mymodal-close" onClick={closeModal}>
           <FontAwesomeIcon icon={faXmark} />
         </button>
-        {/**Inicio Modal Header**/}
+        {/** Modal Header **/}
         <div className="modalHeader">
-          <h3 className="modalTitle"> {title} </h3>
+          <h3 className="modalTitle">{title}</h3>
         </div>
-        {/**Inicio Modal Body**/}
+        {/** Modal Body **/}
         <div className="modalBody">
-          <FormNotes btn={btn} />
+          {/* ✅ PASAMOS closeModal para que el botón "Cerrar" funcione */}
+          <FormNotes btn={btn} onClose={closeModal} />
         </div>
-        
       </div>
     </article>
   );
