@@ -26,4 +26,5 @@ export function ModalNotes({ isOpen, closeModal, title, btn }) {
   );
 }
 
+
 export default ModalNotes;
